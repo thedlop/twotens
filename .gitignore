@@ -1,0 +1,6 @@
+head-wasm32-unknown-wasi-full/**
+head-wasm32-unknown-wasi-full
+vendor/
+vendor/**
+bin/
+bin/**
