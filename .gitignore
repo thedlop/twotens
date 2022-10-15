@@ -4,3 +4,7 @@ vendor/
 vendor/**
 bin/
 bin/**
+tens_ui_js/node_modules
+tens_ui_js/node_modules/**
+tens_wasm_js/node_modules/**
+tens_wasm_js/node_modules

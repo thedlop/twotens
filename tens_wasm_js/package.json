@@ -1,0 +1,32 @@
+{
+  "name": "twotens",
+  "version": "1.0.0",
+  "description": "Various programs used while generating pieces for the 1010s NFT project on the Ergo blockchain.",
+  "main": "js/main.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "all": "cd ../ && sh compile_wasm.sh && cd tens_wasm_js && node make.cjs",
+    "build": "node make.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedlop/twotens.git"
+  },
+  "author": "Dark Lord of Programming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedlop/twotens/issues"
+  },
+  "homepage": "https://github.com/thedlop/twotens#readme",
+  "dependencies": {
+    "@wasmer/wasi": "^1.1.2",
+    "@wasmer/wasmfs": "^0.12.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.10",
+    "node-stdlib-browser": "^1.2.0"
+  }
+}

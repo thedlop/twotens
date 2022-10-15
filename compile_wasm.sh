@@ -10,4 +10,4 @@ cp -r vendor/ ./head-wasm32-unknown-wasi-full/usr/local/lib/tens
 cp -r lib ./head-wasm32-unknown-wasi-full/usr/local/lib/tens
 bin/wasi-vfs pack bin/ruby.wasm \
   --mapdir /usr::./head-wasm32-unknown-wasi-full/usr \
-  -o public/tens.wasm
+  -o tens_wasm_js/tens.wasm

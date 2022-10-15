@@ -8,21 +8,53 @@ require 'json'
 require_relative './tens_art_v1.rb'
 
 module WasmEntry
-  def self.entry
-    # puts ARGV.inspect
-    parsed = JSON.parse(ARGV[0])
+  def self.repl_entry
+    ext = false 
+    puts "Wasm interface loaded, waiting for next command..."
+    until(ext) do
+      next_command = $stdin.gets.strip
+      case next_command
+      when 'exit'
+        ext = true
+      else
+        encode_from_json(next_command)
+      end
+    end
+    puts "Wasm interface exiting, bye bye..."
+    return 0 
+  end
+
+  def self.entry()
+    encode_from_json(ARGV[0])
+  end
+
+# data = "Dark Lord of Programming"
+# keyorder = data.split(//).uniq.join("")
+# options = {orientation: :center, padding: 100 }
+# ir_size = 6
+# color_profile = :gray
+
+  # Expected JSON Keys
+  # data
+  # ir_size
+  # color_profile
+  def self.encode_from_json(json_payload)
+    parsed = JSON.parse(json_payload)
     text = parsed['data']
-    keyorder = parsed['keyorder']
+    # Hardcoded keyorder
+    keyorder = text.split(//).uniq.join("")
     ir_size = parsed['ir_size']
     color_profile = parsed['color_profile'].to_sym
-    options = parsed['options'].reduce({}) do |memo, kv|
-      k = kv[0]
-      v = kv[1]
-      if k == 'orientation'
-        v = v.to_sym 
-      end
-      memo.merge({k.to_sym => v})
-    end
+    # Hardcoded options
+    options = {orientation: :center, padding: 100 }
+    # options = parsed['options'].reduce({}) do |memo, kv|
+    #   k = kv[0]
+    #   v = kv[1]
+    #   if k == 'orientation'
+    #     v = v.to_sym 
+    #   end
+    #   memo.merge({k.to_sym => v})
+    # end
 
     encode(text, keyorder, ir_size, color_profile, options)
   end
