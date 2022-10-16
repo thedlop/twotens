@@ -61,19 +61,14 @@ module WasmEntry
 
   # returns [base64'd png string, base64'd scaled png string]
   def self.encode(text, keyorder, ir_size, color_profile, options)
-    # TODO: validate_text
-    # TODO: validate_keyorder
-    # TODO: validate_ir_size
-    # TODO: validate_color_profile
-    # TODO: validate_options
     nft_data = TensArtV1.new(keyorder, text, options, ir_size: ir_size, color_profile: color_profile)
     nft_data.encode
     bpng = nft_data.to_png
     scaled = bpng.scale_until(200, 200)
-    s = ::Base64.encode64(bpng.png.to_blob)
-    o = ::Base64.encode64(scaled.png.to_blob)
-    puts o
-    [o, s]
+    original_b64 = ::Base64.encode64(bpng.png.to_blob).gsub("\n", "")
+    scaled_b64 = ::Base64.encode64(scaled.png.to_blob).gsub("\n", "")
+    wasm_output = {o: original_b64, s: scaled_b64}.to_json
+    puts wasm_output
   end
 
   def self.decode(png, keyorder)
@@ -105,4 +100,3 @@ WasmEntry.entry()
 #   :gray,
 #   options
 # )
-# puts "HELLO WASM"
