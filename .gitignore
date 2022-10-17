@@ -11,3 +11,5 @@ tens_wasm_js/node_modules
 tens_wasm_js/tens.wasm
 public/tens_ui.js
 public/tens_ui.js.map
+public/assets/
+public/assets/**

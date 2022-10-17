@@ -1,4 +1,78 @@
-body {
+@font-face {
+  font-family: CustomBerkeley;
+  src: url(assets/BerkeleyMono-Regular.woff2);
+}
+
+@font-face {
+  font-family: CustomBerkeley;
+  src: url(assets/BerkeleyMono-Bold.woff2);
+  font-weight: bold;
+}
+
+.form-element-container {
+  margin-top: 10px;
+}
+
+textarea {
+  background: #222;
+  width: 472px;
+  height: 215px;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #999;
+}
+
+select.tens-color {
+  background: #222;
+  color: white;
+  padding: 2px;
+  margin: 10px;
+  border: solid 1px white;
+}
+
+input.tens-submit {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 7px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+input.tens-submit:hover {
+  cursor: pointer;
+  background: #444;
+}
+
+div.ir-size-ind-container {
+  display: inline;
+  margin-left: 5px;
+}
+
+div.ir-size-all-container {
+  margin: 10px;
+}
+
+html {
+  font-family: CustomBerkeley;
+}
+
+body, footer {
   background: black;
-  color: #aaa;
+  color: white;
+  width: 1000px;
+}
+
+a {
+  color: white;
+}
+
+div#root {
+  margin: auto;
+  width: 50%;
+}
+
+.break-word {
+  overflow-wrap: break-word;
 }
