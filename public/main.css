@@ -9,11 +9,13 @@
   font-weight: bold;
 }
 
+/* copied */
 .form-element-container {
   margin-top: 10px;
 }
 
-textarea {
+/* copied */
+textarea.message-form {
   background: #222;
   width: 472px;
   height: 215px;
@@ -23,6 +25,7 @@ textarea {
   border: 2px solid #999;
 }
 
+/* copied */
 select.tens-color {
   background: #222;
   color: white;
@@ -31,6 +34,7 @@ select.tens-color {
   border: solid 1px white;
 }
 
+/* copied */
 input.tens-submit {
   background: #333;
   color: white;
@@ -40,16 +44,19 @@ input.tens-submit {
   font-size: 16px;
 }
 
+/* copied */
 input.tens-submit:hover {
   cursor: pointer;
   background: #444;
 }
 
+/* copied */
 div.ir-size-ind-container {
   display: inline;
   margin-left: 5px;
 }
 
+/* copied */
 div.ir-size-all-container {
   margin: 10px;
 }

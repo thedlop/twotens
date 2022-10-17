@@ -104,7 +104,7 @@ function Root() {
             <br/>
           </div>
           <label>
-            <textarea value={message} onChange={handleChange} />
+            <textarea className='message-form' value={message} onChange={handleChange} />
           </label>
         </div>
       );
